@@ -41,6 +41,17 @@ const data = [
                 year: 2018
             }
         ]
+    },
+    {
+        id: "one-ok-rock",
+        name: "ONE OK ROCK",
+        topAlbums: [
+            {
+                id: "luxury-disease",
+                name: "Luxury Disease",
+                year: 2022
+            }
+        ]
     }
 ];
 

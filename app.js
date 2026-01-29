@@ -3,10 +3,7 @@ import path from "node:path";
 import data from "./our-modules/data.js";
 import renderAlbumPage from "./our-modules/renderAlbumPage.js";
 
-
 const app = express();
-
-app.listen(3000, () => console.log("Server ready!"));
 
 app.get("/pages/:fileName", (req, res) => {
   const { fileName } = req.params;
@@ -17,8 +14,8 @@ app.get(["/", "/pages"], (req, res) => {
   res.redirect("/pages/index.html");
 });
 
-app.get("/api/music/:idOfABand", (req, res) => {
-  const bandId = req.params['idOfABand'];
+app.get("/api/music/:idOfaBand", (req, res) => {
+  const bandId = req.params['idOfaBand'];
   const band = data.find(b => b.id === bandId);
   res.json(band);
 });
@@ -28,3 +25,5 @@ app.get("/music-pages/:bandId/:albumId", (req, res) => {
   const html = renderAlbumPage(bandId, albumId);
   res.send(html);
 });
+
+app.listen(3000, () => console.log("Server ready!"));
